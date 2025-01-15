@@ -1,55 +1,54 @@
-.gallery-container {
-    display: grid; /*using grid here for whole image*/
-    grid-template-rows: auto auto auto;
-    gap: 20px;
-    width: 80%;
-    max-width: 1000px;
-  }
-  .circles-container{ /*this is the top left container for the top row*/
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 10px;
-        position: relative; /*so it moves with the scrolling*/
-        background-color: #ec5e89;
-        height: 150px;
-  }
-  .circle.blue.large{
-    background-color: deepskyblue;
-    width: 80px;
-    height: 80px;
-    top: 20px;
-    left: 50px;
-  }
-  .circle.orange.middle{
-    background-color: rgb(255, 168, 46);
-    width: 60px;
-    height: 60px;
-    top: 50px;
-    left: 200px;
-  }
-  .circle.orange.small{
-    background-color: rgb(255, 168, 46);
-    width: 40px;
-    height: 40px;
-    top: 80px;
-    left: 300px;
-  }
-  .circle.blue.small{
-    background-color: deepskyblue;
-    width: 40px;
-    height: 40px;
-    top: 80px;
-    left: 300px;
-  }
-  .circle { /*it wasn't a circle until i did this*/
-    border-radius: 50%;}
 
+  .circles-container{
+    display: flex; /*using flex */
+    justify-content:space-around;
+    align-items: center;
+    background-color: #ffffff;
+    height: 200px;
+    position: relative;
+    gap: 10px;
+  }
+  .box, .box2, .box3 { /* Common styles for all boxes */
+    height: 200px;
+    width: 500px;
+    background-color: #ec5e89;
+    z-index: 1; /*makes the boxes go under the circles*/
+    position: relative;
+}
+
+    .circle {
+        border-radius: 50%;
+        position: absolute;
+        z-index: 2;
+      }
+      
+      .circle.yellow.small {
+        width: 80px;
+        height: 80px;
+        background-color: #f8de7e;
+        top: 60px; /* Adjusts the vertical position to overlap the box */
+        left: 100px; /* Adjusts the horizontal position */
+      }
+      
+      .circle.blue.large {
+        border-bottom: 100px solid#d0aafe;
+        bottom: 0;
+        left: 70%;
+      }
+      .circle.yellow.middle {
+        border-bottom: 100px solid #f8de7e;
+        bottom: 0;
+        left: 90%;
+      }
+
+  
     .middle-container {
+        margin-top: 10px;
         display: flex; /*using flex for this one because its gonna be two triangles next to each other*/
         justify-content:space-around;
         align-items: flex-end;
         background-color: #4da6a6;
-        height: 200px;
+        height: 400px;
         position: relative;
       }
       
