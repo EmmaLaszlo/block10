@@ -44,3 +44,12 @@
   .circle { /*it wasn't a circle until i did this*/
     border-radius: 50%;}
     
+    .scene-container {
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-end;
+        background-color: #4da6a6;
+        height: 200px;
+        position: relative;
+      }
+      
