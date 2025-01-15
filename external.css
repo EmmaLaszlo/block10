@@ -19,7 +19,7 @@
     .circle {
         border-radius: 50%;
         position: absolute;
-        z-index: 2;
+        z-index: 2; /*makes circles go above the boxes*/
       }
       
       .circle.yellow.small {
@@ -31,14 +31,18 @@
       }
       
       .circle.blue.large {
-        border-bottom: 100px solid#d0aafe;
-        bottom: 0;
-        left: 70%;
+        width: 200px;
+        height: 200px;
+        background-color:aqua;
+        top: 300px; /* Adjusts the vertical position to overlap the box */
+        left: 200px; /* Adjusts the horizontal position */
       }
       .circle.yellow.middle {
-        border-bottom: 100px solid #f8de7e;
-        bottom: 0;
-        left: 90%;
+        width: 100px;
+        height: 100px;
+        background-color:#f8de7e;
+        top: 30px; /* Adjusts the vertical position to overlap the box */
+        right: 200px; /* Adjusts the horizontal position */
       }
 
   
@@ -50,31 +54,32 @@
         background-color: #4da6a6;
         height: 400px;
         position: relative;
+        z-index: 1;
       }
-      
+
       .triangle {
         width: 0;
         height: 0;
+        z-index: 2; /* Ensure the triangle is on top of the background */
+        position: absolute; /*need this to move triangles around the container*/
+}
+      .triangle.orange.small {
         border-left: 50px solid transparent;
         border-right: 50px solid transparent;
-        position: absolute;
-      }
-      
-      .triangle.purple.small {
-        border-bottom: 150px solid #d0aafe;
-        bottom: 0;
-        left: 50%;
-      }
-      
+        border-bottom: 200px solid #fca644; /* Corrected syntax with "solid" */
+        Right: 50px; /* Center horizontally */
+}
       .triangle.purple.large {
-        border-bottom: 100px solid#d0aafe;
-        bottom: 0;
-        left: 70%;
+        border-left: 100px solid transparent;
+        border-right: 100px solid transparent;
+        border-bottom: 400px solid #d0aafe; /* Corrected syntax with "solid" */
+        Right: 400px; /* Center horizontally */
       }
       .triangle.orange.middle {
-        border-bottom: 100px solid #f8de7e;
-        bottom: 0;
-        left: 90%;
+        border-left: 80px solid transparent;
+        border-right: 80px solid transparent;
+        border-bottom: 350px solid #fca644; /* Corrected syntax with "solid" */
+        Left: 470px; /* Center horizontally */
       }
       
       
