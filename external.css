@@ -7,8 +7,8 @@
   }
   .circles-container{ /*this is the top left container for the top row*/
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr; /*3 columns*/
-        gap: 10px; /* between columns*/
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
         position: relative; /*so it moves with the scrolling*/
         background-color: #ec5e89;
         height: 150px;
@@ -43,13 +43,39 @@
   }
   .circle { /*it wasn't a circle until i did this*/
     border-radius: 50%;}
-    
-    .scene-container {
-        display: flex;
-        justify-content: space-around;
+
+    .middle-container {
+        display: flex; /*using flex for this one because its gonna be two triangles next to each other*/
+        justify-content:space-around;
         align-items: flex-end;
         background-color: #4da6a6;
         height: 200px;
         position: relative;
       }
+      
+      .triangle {
+        width: 0;
+        height: 0;
+        border-left: 50px solid transparent;
+        border-right: 50px solid transparent;
+        position: absolute;
+      }
+      
+      .triangle.purple.small {
+        border-bottom: 150px solid #d0aafe;
+        bottom: 0;
+        left: 50%;
+      }
+      
+      .triangle.purple.large {
+        border-bottom: 100px solid#d0aafe;
+        bottom: 0;
+        left: 70%;
+      }
+      .triangle.orange.middle {
+        border-bottom: 100px solid #f8de7e;
+        bottom: 0;
+        left: 90%;
+      }
+      
       
