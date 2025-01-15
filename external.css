@@ -1,0 +1,15 @@
+.gallery-container {
+    display: grid; /*using grid here for whole image*/
+    grid-template-rows: auto auto auto;
+    gap: 20px;
+    width: 80%;
+    max-width: 1000px;
+  }
+  .circles-container{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        position: relative;
+        background-color: #4da6a6;
+        height: 150px;
+  }
