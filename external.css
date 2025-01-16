@@ -131,7 +131,7 @@ body {
     }
   }
   /*iphone*/
-  @media (max-width: 320px) {
+  @media (max-width: 480px) {
     .circles-container {
       flex-wrap: wrap; /* Allow circles and boxes to wrap */
       gap: 10px;
@@ -143,12 +143,19 @@ body {
       height: 200px;
       width: auto;
     }
+    img {
+        width: 100%; /* Make the image scale to fit the container */
+        max-width: 300px; /* Limit the maximum size */
+        height: auto; /* Maintain aspect ratio */
+        margin: 10px auto; /* Center the image */
+      }
   }
+  /*iphone image because this didn't work without changing the photo*/
   @media (max-width: 480px) {
     img {
       width: 100%; /* Make the image scale to fit the container */
       max-width: 300px; /* Limit the maximum size */
-      height: auto; /* Maintain aspect ratio */
+      height: auto; /* Maintain ratio */
       margin: 10px auto; /* Center the image */
     }
   }
