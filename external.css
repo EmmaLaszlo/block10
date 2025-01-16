@@ -21,6 +21,9 @@
     z-index: 1; /*makes the boxes go under the circles*/
     position: relative;
 }
+.circles-container .circle { /* example of hierarchical selector*/ 
+    border: 2px solid rgb(255, 251, 0);
+}
 
     .circle {
         border-radius: 50%;
@@ -47,14 +50,14 @@
         width: 100px;
         height: 100px;
         background-color:#f8de7e;
-        top: 30px; /* Adjusts the vertical position to overlap the box */
-        right: 200px; /* Adjusts the horizontal position */
+        top: 30px; /* Adjusts vertical position to overlap the box */
+        right: 200px; /* Adjusts horizontal position */
       }
 
   
     .middle-container {
         margin-top: 10px;
-        display: flex; /*using flex for this one because its gonna be two triangles next to each other*/
+        display: flex; /*using flex for this one because its gonna be triangles next to each other*/
         justify-content:space-around;
         align-items: flex-end;
         background-color: #4da6a6;
@@ -95,4 +98,10 @@
         height: auto;
         top:43px;
         right: 300px;
+      }
+      .form-container{
+        width: 1200px;
+        text-align: center;
+        margin: 0 auto; /* Centers the layout horizontally */
+        padding: 20px;
       }
