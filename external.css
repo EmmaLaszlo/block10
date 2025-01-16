@@ -1,3 +1,9 @@
+.gallery-container{
+    width: 1200px; /* Fixed width */
+    margin: 0 auto; /* Centers the layout horizontally */
+    background-color: #f4f4f4;
+    padding: 20px;
+}
 
   .circles-container{
     display: flex; /*using flex */
@@ -34,7 +40,7 @@
         width: 200px;
         height: 200px;
         background-color:aqua;
-        top: 300px; /* Adjusts the vertical position to overlap the box */
+        top: 150px; /* Adjusts the vertical position to overlap the box */
         left: 200px; /* Adjusts the horizontal position */
       }
       .circle.yellow.middle {
@@ -66,20 +72,27 @@
       .triangle.orange.small {
         border-left: 50px solid transparent;
         border-right: 50px solid transparent;
-        border-bottom: 200px solid #fca644; /* Corrected syntax with "solid" */
+        border-bottom: 200px solid #fca644; 
         Right: 50px; /* Center horizontally */
 }
       .triangle.purple.large {
         border-left: 100px solid transparent;
         border-right: 100px solid transparent;
-        border-bottom: 400px solid #d0aafe; /* Corrected syntax with "solid" */
+        border-bottom: 400px solid #d0aafe; 
         Right: 400px; /* Center horizontally */
       }
       .triangle.orange.middle {
         border-left: 80px solid transparent;
         border-right: 80px solid transparent;
-        border-bottom: 350px solid #fca644; /* Corrected syntax with "solid" */
+        border-bottom: 350px solid #fca644; 
         Left: 470px; /* Center horizontally */
       }
       
-      
+      /* People icons */
+      .middle-container .person-image{ /*Hierarchical selector*/ 
+        z-index:2;
+        position: relative;
+        height: auto;
+        top:43px;
+        right: 300px;
+      }
