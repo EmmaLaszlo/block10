@@ -1,8 +1,13 @@
+body {
+    margin: 0 auto;
+    padding: 0;
+  }
+
 .gallery-container{
     width: 90%; /* Use percentage for width to make it flexible */
     margin: 0 auto; /* Centers the layout horizontally */
     background-color: #f4f4f4;
-    padding: 20px;
+    padding: 10px;
 }
 
   .circles-container{
@@ -27,30 +32,31 @@
 }
 
     .circle {
+        flex: 1;
         border-radius: 50%;
         position: absolute;
         z-index: 2; /*makes circles go above the boxes*/
       }
       
       .circle.yellow.small {
-        width: 80px;
-        height: 80px;
+        width: 50px;
+        height: 50px;
         background-color: #f8de7e;
         top: 60px; /* Adjusts the vertical position to overlap the box */
         left: 5%; /* Adjusts the horizontal position */
       }
       
       .circle.blue.large {
-        width: 200px;
-        height: 200px;
+        width: 100px;
+        height: 100px;
         background-color:aqua;
         top: 30px;
         left: 50%;
         transform: translateX(-50%);
       }
       .circle.yellow.middle {
-        width: 100px;
-        height: 100px;
+        width: 80px;
+        height: 80px;
         background-color:#f8de7e;
         top: 30px;
         right: 5%;
@@ -117,47 +123,32 @@
       flex-wrap: wrap; /* Allow circles and boxes to wrap */
       gap: 15px;
     }
-  
     .box, .box2, .box3 {
       height: 100px;
     }
-  
     .middle-container {
       height: 250px;
     }
   }
-/*iphone*/
-  @media (max-width: 480px) {
-    .gallery-container {
-      width: 95%;
-      padding: 10px;
-    }
-  
+  /*iphone*/
+  @media (max-width: 320px) {
     .circles-container {
-      flex-direction: column; /* Stack items vertically */
+      flex-wrap: wrap; /* Allow circles and boxes to wrap */
       gap: 10px;
     }
-  
     .box, .box2, .box3 {
-      height: 80px;
+      height: 70px;
     }
-  
     .middle-container {
-      flex-direction: column;
-      align-items: center;
-      height: auto;
-      gap: 10px;
+      height: 200px;
+      width: auto;
     }
-  
-    .circle.blue.large,
-    .circle.yellow.middle,
-    .circle.yellow.small {
-      position: static; /* Remove absolute positioning for smaller screens */
-      margin: 10px auto;
-    }
-  
-    .triangle {
-      position: static; /* Remove absolute positioning for triangles */
-      margin: 10px auto;
+  }
+  @media (max-width: 480px) {
+    img {
+      width: 100%; /* Make the image scale to fit the container */
+      max-width: 300px; /* Limit the maximum size */
+      height: auto; /* Maintain aspect ratio */
+      margin: 10px auto; /* Center the image */
     }
   }
