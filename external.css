@@ -1,5 +1,5 @@
 .gallery-container{
-    width: 1200px; /* Fixed width */
+    width: 90%; /* Use percentage for width to make it flexible */
     margin: 0 auto; /* Centers the layout horizontally */
     background-color: #f4f4f4;
     padding: 20px;
@@ -15,7 +15,8 @@
     gap: 10px;
   }
   .box, .box2, .box3 { /* Common styles for all boxes */
-    height: 200px;
+    flex: 1;/* Allow boxes to adjust their width */
+    height: 150px;
     width: 500px;
     background-color: #ec5e89;
     z-index: 1; /*makes the boxes go under the circles*/
@@ -36,22 +37,23 @@
         height: 80px;
         background-color: #f8de7e;
         top: 60px; /* Adjusts the vertical position to overlap the box */
-        left: 100px; /* Adjusts the horizontal position */
+        left: 5%; /* Adjusts the horizontal position */
       }
       
       .circle.blue.large {
         width: 200px;
         height: 200px;
         background-color:aqua;
-        top: 150px; /* Adjusts the vertical position to overlap the box */
-        left: 200px; /* Adjusts the horizontal position */
+        top: 30px;
+        left: 50%;
+        transform: translateX(-50%);
       }
       .circle.yellow.middle {
         width: 100px;
         height: 100px;
         background-color:#f8de7e;
-        top: 30px; /* Adjusts vertical position to overlap the box */
-        right: 200px; /* Adjusts horizontal position */
+        top: 30px;
+        right: 5%;
       }
 
   
@@ -61,7 +63,7 @@
         justify-content:space-around;
         align-items: flex-end;
         background-color: #4da6a6;
-        height: 400px;
+        height: 300px;
         position: relative;
         z-index: 1;
       }
@@ -72,24 +74,27 @@
         z-index: 2; /* Ensure the triangle is on top of the background */
         position: absolute; /*need this to move triangles around the container*/
 }
-      .triangle.orange.small {
-        border-left: 50px solid transparent;
-        border-right: 50px solid transparent;
-        border-bottom: 200px solid #fca644; 
-        Right: 50px; /* Center horizontally */
-}
-      .triangle.purple.large {
-        border-left: 100px solid transparent;
-        border-right: 100px solid transparent;
-        border-bottom: 400px solid #d0aafe; 
-        Right: 400px; /* Center horizontally */
-      }
-      .triangle.orange.middle {
-        border-left: 80px solid transparent;
-        border-right: 80px solid transparent;
-        border-bottom: 350px solid #fca644; 
-        Left: 470px; /* Center horizontally */
-      }
+.triangle.orange.small {
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-bottom: 100px solid #fca644;
+    right: 10%;
+  }
+  
+  .triangle.purple.large {
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 200px solid #d0aafe;
+    right: 50%;
+    transform: translateX(50%);
+  }
+  
+  .triangle.orange.middle {
+    border-left: 40px solid transparent;
+    border-right: 40px solid transparent;
+    border-bottom: 150px solid #fca644;
+    left: 10%;
+  }
       
       /* People icons */
       .middle-container .person-image{ /*Hierarchical selector*/ 
@@ -97,11 +102,62 @@
         position: relative;
         height: auto;
         top:43px;
-        right: 300px;
+        right: 10%;
       }
       .form-container{
-        width: 1200px;
+        width: 90%;
         text-align: center;
         margin: 0 auto; /* Centers the layout horizontally */
         padding: 20px;
       }
+
+     /* ipad */
+@media (max-width: 1024px) {
+    .circles-container {
+      flex-wrap: wrap; /* Allow circles and boxes to wrap */
+      gap: 15px;
+    }
+  
+    .box, .box2, .box3 {
+      height: 100px;
+    }
+  
+    .middle-container {
+      height: 250px;
+    }
+  }
+/*iphone*/
+  @media (max-width: 480px) {
+    .gallery-container {
+      width: 95%;
+      padding: 10px;
+    }
+  
+    .circles-container {
+      flex-direction: column; /* Stack items vertically */
+      gap: 10px;
+    }
+  
+    .box, .box2, .box3 {
+      height: 80px;
+    }
+  
+    .middle-container {
+      flex-direction: column;
+      align-items: center;
+      height: auto;
+      gap: 10px;
+    }
+  
+    .circle.blue.large,
+    .circle.yellow.middle,
+    .circle.yellow.small {
+      position: static; /* Remove absolute positioning for smaller screens */
+      margin: 10px auto;
+    }
+  
+    .triangle {
+      position: static; /* Remove absolute positioning for triangles */
+      margin: 10px auto;
+    }
+  }
